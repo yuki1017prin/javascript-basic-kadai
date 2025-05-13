@@ -1,11 +1,11 @@
 function getTodayFormatted() {
   const today = new Date();
   const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, '0'); // 1を加算し、2桁に
-  const day = String(today.getDate()).padStart(2, '0'); // 2桁に
-  const formattedDate = `${year}-${month}-${day}`;
+  const month = today.getMonth() + 1; // 0始まりなので+1
+  const day = today.getDate();
+  const formattedDate = `${year}年${month}月${day}日`;
   console.log(formattedDate);
 }
 
 // 関数呼び出し
-getTodayFormatted(); // 出力例: 2025-05-13
+getTodayFormatted(); // 出力例: 2025年5月13日
